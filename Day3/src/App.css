@@ -1,0 +1,20 @@
+#card{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 240px;
+    margin: 10px;
+}
+
+#img{
+    width: 150px;
+}
+
+#dabba{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
