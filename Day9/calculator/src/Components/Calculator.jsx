@@ -19,11 +19,18 @@ const Calculator = () => {
     }
 
     function CalculateFunction(){
-        let ans = eval(value)
-        setValue(ans)
+        let ans = eval(value).toFixed(4)
+        // console.log(typeof(ans))
+        setValue(String(ans))
     }
 
     function HandleBackspace(){
+
+        if(value.length == 1)
+        {
+            setValue("0")
+        }
+        
         let newVal = value.slice(0, -1)
         setValue(newVal)
     }
