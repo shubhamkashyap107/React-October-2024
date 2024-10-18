@@ -4,6 +4,7 @@ import { SWIGGY_HOME_API } from '../Utils/Constants'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import ImageSlider from './ImageSlider';
+import RestaurantsList from './RestaurantsList';
 
 
 const Food = () => {
@@ -14,11 +15,12 @@ const Food = () => {
   useEffect(() => {
     const getData = async() => {
 
-      const data = await fetch(SWIGGY_HOME_API)
-      const json = await data.json()
-      // console.log(json.data.cards)
+      const data2 = await fetch(SWIGGY_HOME_API)
+      const json = await data2.json()
+   
+      setData(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
       setImages(json.data.cards[0].card.card.gridElements.infoWithStyle.info)
-      setData(json)
+
       
     }
     
@@ -31,6 +33,8 @@ const Food = () => {
     <div>
 
     <ImageSlider data={images} />
+
+    <RestaurantsList data={data} />
       
     </div>
   )
